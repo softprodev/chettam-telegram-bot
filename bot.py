@@ -49,7 +49,7 @@ def restricted(func):
 def dayoff(update, context):
     """Dayoff messages"""
     try:
-        reply = get_quote()
+        reply = get_leetcode_problem()
     except:
         reply = "It's dayoff, fool!"
         update.message.reply_sticker(
@@ -296,7 +296,7 @@ def schedule_game_notification(context, update, game, message, when=0, auto=Fals
             prefix = ctx.bot_data["player"]
         ctx.bot.send_message(
             chat_id=update.effective_chat.id,
-            text=f"{tag_brackets(prefix)}*{slot_time_header(game)}*: {game.players_call_active} {message}",
+            text=f"\[_{prefix}_] *{slot_time_header(game)}*: {game.players_call_active} {message}",
             parse_mode=ParseMode.MARKDOWN,
         )
 

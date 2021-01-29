@@ -27,7 +27,6 @@ from app.vars import (
     MAIN_STATE,
     EMOJI,
     MAIN_HOURS,
-    USAGE_TEXT,
 )
 
 
@@ -159,10 +158,6 @@ def hours_keyboard(update):
     """Returns keyboard with timeslots for new game"""
     player = get_player(update)
     timezone = player.timezone_pytz
-    # TODO WTF IS THIS
-    # TODO WTF IS THIS
-    # TODO WTF IS THIS
-    # TODO WTF IS THIS
     main_hours_dt = [
         convert_to_dt(timeslot=f"{hour:02d}:00", timezone=timezone)
         for hour in MAIN_HOURS
@@ -219,11 +214,6 @@ def in_out(update, context, action, hard_args=None):
                     elif action == "out":
                         if game and player in game.players:
                             remove_player_and_clean_game(context, game, player)
-
-        reply = get_status_reply(update)
-    else:
-        reply = USAGE_TEXT
-    update.message.reply_markdown(reply)
 
 
 def schedule_game_notification(context, update, game, message, when=0, auto=False):

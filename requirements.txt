@@ -4,7 +4,7 @@ astroid==2.4.2
 certifi==2020.6.20
 cffi==1.14.3
 chardet==3.0.4
-cryptography==3.3.2
+cryptography==3.2.1
 decorator==4.4.2
 emoji==0.6.0
 idna==2.10
@@ -33,3 +33,4 @@ tzlocal==3.0b1
 urllib3==1.25.11
 wrapt==1.12.1
 zipp==3.3.1
+Pillow==8.1.2
